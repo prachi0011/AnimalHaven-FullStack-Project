@@ -149,41 +149,6 @@ header img {
   box-shadow: 0 0 3px 3px var(--accent-color-1);
 }
 
-/* [property=startDate] {
-  display: grid;
-  grid-template-columns: 3fr 1fr 1fr;
-  gap: 0.3em;
-  align-items: center;
-  margin: 1.5em 0;
-  padding: 0;
-  border: none;
-  color: var(--secondary-color);
-}
-[property=startDate] p {
-  font-size: 80%;
-}
-[property=startDate] select {
-  display: block;
-  padding: 0.3em 0.4em;
-  background-image: url('data:image/svg+xml;charset=utf-8,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path fill="%234454C3" d="M15.3 9.3a1 1 0 0 1 1.4 1.4l-4 4a1 1 0 0 1-1.4 0l-4-4a1 1 0 0 1 1.4-1.4l3.3 3.29 3.3-3.3z"/></svg>');
-  background-position: center right;
-  background-size: 2em 2em;
-  background-repeat: no-repeat;
-  border-radius: 0.5em;
-  border: 1px solid var(--bg-color);
-  appearance: none;
-  color: inherit;
-  cursor: pointer;
-  transition: background-color 100ms ease;
-}
-[property=startDate] select:hover {
-  background-color: var(--bg-color);
-}
-[property=startDate] select:focus {
-  outline: none;
-  box-shadow: 0 0 3px 3px var(--accent-color-1); */
-/* } */
-
 button.mv-save {
   width: 100%;
   margin: 2em 0 1em;
@@ -209,17 +174,13 @@ button.mv-save:not(:disabled):focus {
   box-shadow: 0 0 5px 5px var(--accent-color-1);
 }
 
-/* [property=feedback]:first-of-type:nth-last-of-type(n + 2) ~ [property=feedback] {
+ [property=feedback]:first-of-type:nth-last-of-type(n + 2) ~ [property=feedback] {
   display: none;
-} */
+} 
 
-/* pre {
-  tab-size: 3;
-  -moz-tab-size: 3;
-} */
-/* pre:empty::after {
-  content: "No feedback yet 😔";
-} */
+ pre:empty::after {
+  content: "";
+} 
 
 ::-moz-focus-inner {
   border: 0;
