@@ -76,4 +76,6 @@ html {
     border-radius:30px;
     text-transform:capitalize;
     box-shadow: 0 10px 16px 1px rgba(174, 199, 251, 1);
+    width: 480px;
+    margin-bottom: -580px;
   }
