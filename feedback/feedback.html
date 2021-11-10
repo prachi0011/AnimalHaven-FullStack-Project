@@ -1,0 +1,106 @@
+
+<!DOCTYPE html>
+<html lang='en' class=''>
+
+<head>
+
+  <meta charset='UTF-8'>
+  <title>Feedback</title>
+
+  <meta name="robots" content="noindex">
+
+  <link rel="shortcut icon" type="image/x-icon" href="images/icon.png">
+  <link rel="mask-icon" href="https://cpwebassets.codepen.io/assets/favicon/logo-pin-8f3771b1072e3c38bd662872f6b673a722f4b3ca2421637d5596661b4e2132cc.svg" color="#111">
+  <link rel="canonical" href="https://codepen.io/dmitrysharabin/pen/JjoXwBN?editors=1100">
+  <link rel="stylesheet" href="feedback.css">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/mavo/0.2.0/mavo.min.css">
+<script src="https://cdnjs.cloudflare.com/ajax/libs/prefixfree/1.0.7/prefixfree.min.js"></script>
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+</head>
+
+<body>
+  <div class="row content">
+	<header class="col">
+		<h1>Feel free to drop us your feedback.</h1>
+
+ 		<img src="https://s3-us-west-2.amazonaws.com/s.cdpn.io/1457119/feedback-form-template.svg"
+			  alt="A woman is sitting on the floor and working on a laptop (vector illustration)" /> 
+		
+	</header>
+	<main mv-app="feedbackForm"
+			mv-storage="#data"
+			mv-source="#source"
+			mv-mode="read"
+			class="col"
+			>
+		<form mv-multiple="feedback">
+			<label>
+				<h2>
+					How satisfied are you overall with the support of services provided by us?
+				</h2>
+				
+				<div class="tickmarks">
+					<span mv-multiple="tickmark"
+							mv-value="0 .. 10"
+							mv-storage="none"
+							class="[if($this = score, highlight)]"
+							mv-action="set(score, $this)"></span>
+				</div>
+				
+				<input property="score"
+						 type="range" max="10"
+						 style="--score: [score * 10]%" />
+				
+				<div class="legend">
+					<span mv-action="set(score, 0)">
+						Not at all likely
+					</span>
+					<span mv-action="set(score, 10)">
+						Extremely likely
+					</span>
+				</div>
+			</label>
+			<h2>
+				Now please feel free to share us your experience with our website
+			</h2> 
+			<textarea property="comment"
+						 cols="30" rows="10"
+						 placeholder="Please share us your experience and how our website was helptful to you..."></textarea>
+
+			
+			<div class="mv-bar">
+				<button class="mv-save"
+						  disabled="[!comment]"
+						  mv-action="add(feedback)">
+					Send Feedback
+				</button>
+			</div>
+		</form>
+	</main>
+</div>
+
+<!-- <footer>
+	<h3>Stored Data</h3>
+	<pre id="data"></pre>
+</footer>
+
+<!-- We need an empty source (which is different from the storage) for not to show end-users previously-stored feedback of other users. 
+<div id="source" hidden>
+{
+	"feedback": [
+		{}
+	]
+}
+</div> -->
+  
+<script src="https://cpwebassets.codepen.io/assets/common/stopExecutionOnTimeout-1b93190375e9ccc259df3a57c1abc0e64599724ae30d7ea4c6877eb615f89387.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/mavo/0.2.0/mavo.es5.js"></script>
+  <script  src="https://cdpn.io/cp/internal/boomboom/pen.js?key=pen.js-087bf72c-4607-7139-0237-f88845981579" crossorigin></script>
+</body>
+
+</html>
